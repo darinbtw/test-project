@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЛЮТИ TEST</title>
+    <style>
+        /* Ваши стили */
+
+        /* Скрыть модальные окна по умолчанию */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        /* Показать модальное окно при наличии соответствующего якоря в URL */
+        .modal:target {
+            display: block;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            width: 50%;
+            margin: 20% auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Дополнительные стили */
+    </style>
+</head>
+<body>
+    <div class="row">
+        <h1>Наши товары</h1>
+        <p>Здесь вы найдете товары.</p>
+        
+        {% for product in products %}
+        <div class="col-md-4">
+            <div class="product">
+                <img src="{{ url_for('static', filename='image_product/product' + loop.index|string + '.png') }}" alt="Изображение товара" class="img-fluid">
+                <div class="product_info">
+                    <h3>Модель: {{product[1]}}</h3>
+                    <p>Цена: {{ product[2] }} </p>
+                    <a href="#Mymodal{{product[0]}}" class="click_to_button">добавить в корзину</a>
+                </div>
+            </div>
+        </div>
+        <!-- Создаём модальное окно для оформления заказа! -->
+        <div id="Mymodal{{ product[0] }}" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderModalLabel">Оформление заказа</h5>
+                    <a href="#" class="close">&times;</a>
+                </div>
+                <div class="modal-body">
+                    <form id="orderForm" action="/submit_order" method="POST">
+                        <input type="hidden" name="productId" value="{{ product[0] }}">
+                        <div class="form-group">
+                            <label for="phoneNumber">телефон</label>
+                            <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить заказ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
