@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ЛЮТИ TEST</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* Ваши стили */
 
@@ -44,7 +45,7 @@
         {% for product in products %}
         <div class="col-md-4">
             <div class="product">
-                <img src="{{ url_for('static', filename='image_product/product' + loop.index|string + '.png') }}" alt="Изображение товара" class="img-fluid">
+                <img src="{{ product[5] }}" alt="Изображение товара" class="img-fluid">
                 <div class="product_info">
                     <h3>Модель: {{product[1]}}</h3>
                     <p>Цена: {{ product[2] }} </p>
