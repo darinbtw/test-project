@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Магазин</title>
+    <!-- Подключение стилей Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- Дополнительные стили -->
+    <style>
+        .contact-info p {
+            margin-top: 10px; /* Устанавливаем отступ сверху для абзацев внутри контактной информации */
+        }
+        .product-image {
+            cursor: pointer;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            flex: 1 0 auto;
+        }
+
+        .footer {
+            flex-shrink: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигационное меню -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Магазин MicroHelp</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/products">Товары</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Контент страницы -->
+    <div class="container mt-4">
+        <div class="jumbotron">
+            <h1 class="display-4">Добро пожаловать в магазин MicroHelp, продажа компьютерных комплектующих</h1>
+            <p class="lead">Здесь вы найдете высококачественные комплектующие для вашего компьютера.</p>
+            <hr class="my-4">
+            <p>Исследуйте наш широкий ассортимент товаров, чтобы найти то, что вам нужно.</p>
+            <a class="btn btn-primary btn-lg" href="/products" role="button">Исследовать товары</a>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="footer mt-auto py-3 bg-dark text-white">
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Покупателям</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/how-to-order">Как сделать заказ</a></li>
+                        <li><a href="/payment-methods">Способы оплаты</a></li>
+                        <li><a href="/delivery">Доставка</a></li>
+                        <li><a href="/return-policy">Возврат товара</a></li>
+                        <li><a href="/refund-policy">Возврат денежных средств</a></li>
+                        <li><a href="/faq">Вопросы и ответы</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Партнерам</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/become-a-seller">Продавайте на MicroHelp</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <!-- Другие элементы, если есть -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-center">
+            <img src="{{ url_for('static', filename='qr_code.png') }}" alt="QR Code" style="width: 100px; height: auto;">
+            <p>Наведите камеру, чтобы связаться через нашего Telegram-bot'a</p>
+        </div>
+        <div class="container text-center">
+            <span class="text-muted">2024 -2024 © MicroHelp — технологичный интернет-магазин комплектующих. Все права защищены. Доставка по всей России.</span>
+        </div>
+    </footer>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

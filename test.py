@@ -32,7 +32,7 @@ def get_products_from_db():
 
 @test.route('/')
 def index():
-    return 'Привет всем'
+    return render_template('main.html')
 
 @test.route('/products')
 def products():
