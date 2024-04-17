@@ -43,6 +43,10 @@ def products():
 def success_order():
     return render_template('success_order.html')
 
+@test.route('/contacts')
+def contacts():
+    return render_template('contacts.html')
+
 @test.route('/submit_order', methods=['POST'])
 def submit_order():
     if request.method == 'POST':

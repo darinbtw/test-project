@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <!-- Подключение стилей Bootstrap и Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Подключение ваших собственных стилей -->
+    <link rel="stylesheet" href="C:\Users\Vlad\Documents\GitHub\test-project\test_style\styles.css">
+</head>
+
+<body>
+    <!-- Навигационное меню -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">Мой Кастомизированный Сайт</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">О нас</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Портфолио</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="contacts" data-lang-en="Contacts" data-lang-ru="Контакты">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Основной контент страницы -->
+    <main>
+        <section id="contact-info" class="bg-light py-5">
+            <div class="container">
+                <h1 class="text-center">Свяжитесь с нами</h1>
+                <div class="row justify-content-center">
+                    <div class="col-md-4">
+                        <div class="contact-item text-center">
+                            <i class="fas fa-map-marker-alt fa-2x mb-3"></i>
+                            <p>г. Москва, ул. Примерная, д. 123</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-item text-center">
+                            <i class="fas fa-phone fa-2x mb-3"></i>
+                            <p>+7 (123) 456-7890</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-item text-center">
+                            <i class="fas fa-envelope fa-2x mb-3"></i>
+                            <p>info@example.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-form" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Отправить сообщение</h2>
+                <form>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">Ваше имя:</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Ваш email:</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Сообщение:</label>
+                                <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Отправить</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container text-center">
+            <span>© 2024 <span id="footer-text" data-lang-en="My Customized Site" data-lang-ru="Мой Кастомизированный Сайт">Мой Кастомизированный Сайт</span></span>
+            <div class="social-icons mt-3">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Подключение скриптов Bootstrap и Font Awesome -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</body>
+
+</html>
