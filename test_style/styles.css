@@ -1,0 +1,146 @@
+/* styles.css */
+
+/* Общие стили для всего сайта */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Set a light background color */
+}
+
+.container {
+    max-width: 1200px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрирование контейнера */
+    padding: 0 15px; /* Add some padding to the sides of the container */
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+/* Стили для навигационного меню */
+.navbar {
+    border-radius: 0; /* Убираем скругления у верхней панели навигации */
+    background-color: #343a40;
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #fff;
+    font-size: 24px;
+}
+
+.navbar-nav {
+    font-size: 18px; /* Increase the font size of navigation links */
+}
+
+/* Стили для заголовков и текста */
+h1, h2, h4, h6 {
+    color: #343a40; /* Цвет заголовков */
+}
+
+p {
+    color: #6c757d; /* Цвет обычного текста */
+}
+
+/* Стили для кнопок */
+.btn {
+    background-color: #007bff; /* Цвет фона кнопок */
+    color: #ffffff; /* Цвет текста кнопок */
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Цвет фона кнопок при наведении */
+}
+
+/* Стили для QR-кода */
+.qr-code {
+    width: 100px; /* Ширина QR-кода */
+    height: auto;
+    margin-top: 20px; /* Увеличиваем отступ сверху */
+    margin-bottom: 20px; /* Увеличиваем отступ снизу */
+    display: block; /* Превращаем QR-код в блочный элемент */
+    margin-left: auto; /* Выравниваем по центру по горизонтали */
+    margin-right: auto; /* Выравниваем по центру по горизонтали */
+}
+
+.navbar {
+    border-radius: 0; /* Убираем скругления у навигационной панели */
+}
+
+.nav-link {
+    color: #fff !important; /* Цвет ссылок в навигационной панели */
+}
+
+.nav-link:hover {
+    color: #f8f9fa !important; /* Цвет ссылок при наведении */
+}
+
+.footer {
+    background-color: #343a40; /* Цвет фона футера */
+    color: #f8f9fa;
+    padding: 50px 0; /* Increase the padding */
+    text-align: center; /* Center-align the content */
+}
+
+.footer a {
+    color: #f8f9fa; /* Цвет ссылок в подвале */
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #007bff; /* Цвет ссылок при наведении */
+}
+
+.footer span {
+    display: block; /* Make the copyright text block-level */
+    margin-top: 20px; /* Add some space above the copyright text */
+}
+
+/* Стили для отзывов */
+.user-review {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff; /* White background color for reviews */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.avatar {
+    width: 50px; /* Размер аватарки */
+    height: 50px;
+    border-radius: 50%; /* Скругление аватарки */
+    margin-right: 10px; /* Отступ между аватаркой и текстом */
+}
+
+.stars {
+    color: gold; /* Цвет звезд */
+}
+
+/* Стили для изображений товаров */
+.product-image-small, .product-image {
+    width: auto; /* Ширина изображений товаров */
+    height: auto; /* Автоматическая высота */
+    border-radius: 5px; /* Скругление углов */
+    margin-bottom: 20px; /* Отступ снизу между изображениями */
+}
+
+/* Особые стили для больших экранов */
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px; /* Максимальная ширина контейнера на больших экранах */
+    }
+}
+
+/* Особые стили для средних экранов */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .container {
+        max-width: 720px; /* Максимальная ширина контейнера на средних экранах */
+    }
+}
+
+/* Особые стили для маленьких экранов */
+@media (max-width: 767.98px) {
+    .container {
+        max-width: 540px; /* Максимальная ширина контейнера на маленьких экранах */
+    }
+}

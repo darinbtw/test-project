@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кастомизированная страница</title>
+    <link rel="stylesheet" href="C:\Users\Vlad\Documents\GitHub\test-project\test_style\styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        /* Дополнительные кастомные стили */
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .jumbotron {
+            background-image: url('https://via.placeholder.com/1500x400');
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+            margin-bottom: 30px;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Мой Кастомизированный Сайт</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron">
+        <h1 class="display-4">Добро пожаловать!</h1>
+        <p class="lead">Наши уникальные услуги помогут вам достичь успеха в вашем деле.</p>
+        <a href="#" class="btn btn-custom btn-lg">Узнать больше</a>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <h2>О нас</h2>
+        <p>Мы - ведущая компания в области кастомизации веб-страниц. Наша цель - помочь клиентам создавать уникальные и креативные веб-сайты.</p>
+        <h2>Наши услуги</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Дизайн</h3>
+                <p>Мы создаем привлекательный и интуитивно понятный дизайн для вашего веб-сайта.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Разработка</h3>
+                <p>Наша команда разработчиков готова создать для вас функциональный и мощный веб-сайт.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Поддержка</h3>
+                <p>Мы предоставляем круглосуточную поддержку, чтобы ваш веб-сайт всегда работал без сбоев.</p>
+            </div>
+        </div>
+        <h2>Наши работы</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="https://via.placeholder.com/300" alt="Work 1" class="img-fluid mb-3">
+            </div>
+            <div class="col-md-4">
+                <img src="https://via.placeholder.com/300" alt="Work 2" class="img-fluid mb-3">
+            </div>
+            <div class="col-md-4">
+                <img src="https://via.placeholder.com/300" alt="Work 3" class="img-fluid mb-3">
+            </div>
+        </div>
+        <h2>Связаться с нами</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Ваше имя</label>
+                <input type="text" class="form-control" id="name" placeholder="Введите ваше имя">
+            </div>
+            <div class="form-group">
+                <label for="email">Ваш Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Введите ваш email">
+            </div>
+            <div class="form-group">
+                <label for="message">Сообщение</label>
+                <textarea class="form-control" id="message" rows="3" placeholder="Введите ваше сообщение"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container text-center">
+        <span>© 2024 Мой Кастомизированный Сайт</span>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
