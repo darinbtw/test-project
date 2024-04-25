@@ -1,78 +1,83 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ЛЮТИ TEST</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Ваши стили */
-
-        /* Скрыть модальные окна по умолчанию */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-        }
-
-        /* Показать модальное окно при наличии соответствующего якоря в URL */
-        .modal:target {
-            display: block;
-        }
-
-        .modal-content {
-            background-color: white;
-            padding: 20px;
-            width: 50%;
-            margin: 20% auto;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Дополнительные стили */
-    </style>
+    <title>Покупка товара</title>
+    <!-- Подключение стилей Bootstrap и Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Подключение ваших собственных стилей -->
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="row">
-        <h1>Наши товары</h1>
-        <p>Здесь вы найдете товары.</p>
-        
-        {% for product in products %}
-        <div class="col-md-4">
-            <div class="product">
-                <img src="{{ product[5] }}" alt="Изображение товара" class="img-fluid">
-                <div class="product_info">
-                    <h3>Модель: {{product[1]}}</h3>
-                    <p>Цена: {{ product[2] }} </p>
-                    <a href="#Mymodal{{product[0]}}" class="click_to_button">добавить в корзину</a>
+    <!-- Навигационное меню -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">Мой Кастомизированный Сайт</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">О нас</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="portfolio.html">Портфолио</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacts.html">Контакты</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <!-- Создаём модальное окно для оформления заказа! -->
-        <div id="Mymodal{{ product[0] }}" class="modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="orderModalLabel">Оформление заказа</h5>
-                    <a href="#" class="close">&times;</a>
-                </div>
-                <div class="modal-body">
-                    <form id="orderForm" action="/submit_order" method="POST">
-                        <input type="hidden" name="productId" value="{{ product[0] }}">
-                        <div class="form-group">
-                            <label for="phoneNumber">телефон</label>
-                            <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" required>
+        </nav>
+    </header>
+
+    <!-- Основной контент страницы -->
+    <main>
+        <section class="container mt-5">
+            <div class="row">
+                {% for product in products %}
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <img src="{{ product[5] }}" class="card-img-top" alt="Изображение товара">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product[1] }}</h5>
+                            <p class="card-text"><strong>Модель:</strong> {{ product[2] }}</p>
+                            <p class="card-text"><strong>Цена:</strong> {{ product[3] }} <strong>₽</strong></p>
+                            <button class="btn btn-primary">Добавить в корзину</button>
                         </div>
-                        <button type="submit" class="btn btn-primary">Отправить заказ</button>
-                    </form>
+                    </div>
                 </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Мой Кастомизированный Сайт</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
-        {% endfor %}
-    </div>
+    </footer>
+
+    <!-- Подключение скриптов Bootstrap и Font Awesome -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 </body>
 </html>
