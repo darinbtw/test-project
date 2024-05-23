@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Данные из базы данных</title>
+  </head>
+  <body>
+    <h1>Данные из базы данных</h1>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Колонка 1</th>
+          <th>Колонка 2</th>
+          <!-- Добавьте столько колонок, сколько нужно -->
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td>{{ row[0] }}</td>
+          <td>{{ row[1] }}</td>
+          <!-- Добавьте столько ячеек, сколько нужно -->
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

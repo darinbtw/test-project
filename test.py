@@ -13,31 +13,22 @@ def connect_to_db():
     )
     return con
 
-# Функция для получения данных о продуктах из базы данных PostgreSQL
-def get_products_from_db():
+@test.route('/')
+def index():
     conn = connect_to_db()
-    if conn:
-        try:
-            cur = conn.cursor()
-            cur.execute("SELECT * FROM products")
-            products = cur.fetchall()
-            cur.close()
-            conn.close()
-            return products
-        except psycopg2.Error as e:
-            print("Error fetching data from PostgreSQL:", e)
-            return []
-    else:
-        return []
+    cur = conn.cursor()
+    cur.execute('SELECT * FROM ваша_таблица;')
+    rows = cur.fetchall()
+    cur.close()
+    conn.close()
+    return render_template('products.html', rows=rows)
+
 
 @test.route('/')
 def index():
     return render_template('main1.html')
 
-@test.route('/products')
-def products():
-    products = get_products_from_db()
-    return render_template('products.html', products=products)
+
 
 @test.route('/success_order')
 def success_order():
