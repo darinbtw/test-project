@@ -5,30 +5,28 @@ test = Flask(__name__)
 
 def connect_to_db():
     con = psycopg2.connect(
-        dbname = 'тут должно быть написано ваше название',
+        dbname = 'database123',
         user = 'postgres',
-        password = 'тут должен быть написан ваш пароль',
+        password = '123srmax',
         host = 'localhost',
         port = '5432',
     )
     return con
 
-@test.route('/')
-def index():
+@test.route('/product')
+def product():
     conn = connect_to_db()
     cur = conn.cursor()
-    cur.execute('SELECT * FROM ваша_таблица;')
+    cur.execute('SELECT * FROM products;')
     rows = cur.fetchall()
     cur.close()
     conn.close()
-    return render_template('products.html', rows=rows)
+    return render_template('product.html', rows=rows)
 
 
 @test.route('/')
 def index():
     return render_template('main1.html')
-
-
 
 @test.route('/success_order')
 def success_order():
