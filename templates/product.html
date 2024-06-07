@@ -37,31 +37,33 @@
       }
   </style>
   </head>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Мой Кастомизированный Сайт</a>
-            <button class="navbar-toggler" type="button">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Главная</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">О нас</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contacts">Контакты</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/product">Товары</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container">
+              <a class="navbar-brand" href="#">Мой Кастомизированный Сайт</a>
+              <button class="navbar-toggler" type="button">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Главная</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">О нас</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="/contacts">Контакты</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="/product">Товары</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+    </header>
     <div class="container">
       <h1 class="my-4">Данные из базы данных</h1>
       <div class="row">
@@ -71,12 +73,11 @@
                   <img src="{{ row[5] }}" alt="Image" class="img-fluid" />
                   <p><strong>{{ row[0] }}</strong></p>
                   <p>{{ row[1] }}</p>
-                  <div class="text-center">
-                      <button type="button">Текст</button>
-                  </div>
+                  <a href="/purschaces/{{ row[0] }}" class="btn btn-custom">Купить</a>
               </div>
           </div>
           {% endfor %}
       </div>
-</body>
+    </div>
+  </body>
 </html>
